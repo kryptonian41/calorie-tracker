@@ -3,10 +3,32 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux'
+import { configureStore } from './redux';
+import { createAxiosInstance } from './config/axios';
+import { ChakraProvider } from "@chakra-ui/react"
+import EntriesSeedData from './config/seed-data/store-seed.json'
+import { BrowserRouter } from "react-router-dom";
+import theme from './utils/theme';
+
+createAxiosInstance({
+  baseURL: process.env.REACT_APP_API_URL as string,
+  userToken: process.env.REACT_APP_USER_TOKEN as string
+})
+
+const store = configureStore({
+  entries: EntriesSeedData
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <ChakraProvider theme={theme}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ChakraProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

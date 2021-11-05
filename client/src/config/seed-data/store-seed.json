@@ -1,0 +1,62 @@
+[
+  {
+    "itemName": "Guajolota",
+    "calorieAmount": 235,
+    "timestamp": "2021-10-31T10:49:38.674Z",
+    "userId": "79a44e83-a6a4-4347-bbad-3096ee707fdf"
+  },
+  {
+    "itemName": "Melt",
+    "calorieAmount": 437,
+    "timestamp": "2021-11-02T19:33:51.192Z",
+    "userId": "1501b7bd-46d8-4cb1-af9c-c1ed1b0f8419"
+  },
+  {
+    "itemName": "Choripán",
+    "calorieAmount": 334,
+    "timestamp": "2021-11-02T15:48:56.400Z",
+    "userId": "0f76ad47-d724-4b95-b466-79cc84d74e3f"
+  },
+  {
+    "itemName": "Tongue toast",
+    "calorieAmount": 316,
+    "timestamp": "2021-10-31T06:24:43.016Z",
+    "userId": "9fa42ec2-7527-47a7-9152-0f8f18de23c1"
+  },
+  {
+    "itemName": "Hot brown",
+    "calorieAmount": 209,
+    "timestamp": "2021-10-30T05:28:56.948Z",
+    "userId": "4ac339f8-20aa-49e4-8b8e-36d1b8dc7315"
+  },
+  {
+    "itemName": "Horseshoe",
+    "calorieAmount": 483,
+    "timestamp": "2021-10-28T00:25:06.512Z",
+    "userId": "0c2eced7-3179-4569-bffb-538599645f3d"
+  },
+  {
+    "itemName": "Breakfast",
+    "calorieAmount": 70,
+    "timestamp": "2021-11-01T15:13:35.613Z",
+    "userId": "702f1cf2-0e14-4154-a59f-46f716700872"
+  },
+  {
+    "itemName": "St. Paul",
+    "calorieAmount": 442,
+    "timestamp": "2021-10-29T19:06:17.744Z",
+    "userId": "8a3da70a-b58f-4668-9d1c-3060648cccfa"
+  },
+  {
+    "itemName": "Panini",
+    "calorieAmount": 197,
+    "timestamp": "2021-10-28T16:54:58.748Z",
+    "userId": "9e3d49b8-300a-4831-8209-2609ab60fe40"
+  },
+  {
+    "itemName": "Cheese",
+    "calorieAmount": 111,
+    "timestamp": "2021-11-02T18:31:43.213Z",
+    "userId": "96086a98-3b01-432a-9e88-d9482528dcf0"
+  }
+]

@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from './redux';
+import { getAdminBootstrapData, getUserBootstrapData, getUserInfo } from './redux/actions';
+
+const AdminLayout = React.lazy(() => import('./Layouts/Admin'))
+const UserLayout = React.lazy(() => import('./Layouts/User'))
 
 function App() {
+  const dispatch = useDispatch()
+  const user = useSelector<RootState, any>(store => store.user)
+
+  useEffect(() => {
+    dispatch(getUserInfo())
+  }, [])
+
+  useEffect(() => {
+    if (!user) return
+    if (user.isAdmin) dispatch(getAdminBootstrapData())
+    else dispatch(getUserBootstrapData())
+  }, [user, dispatch])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <Suspense fallback={<div>Getting user info</div>}>
+      {
+        user ?
+          user.isAdmin ? <AdminLayout /> : <UserLayout /> :
+          "Please provide a user token"
+      }
+    </Suspense>
+
   );
 }
 

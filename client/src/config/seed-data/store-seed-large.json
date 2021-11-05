@@ -1,0 +1,602 @@
+[
+  {
+    "itemName": "Katsu sando",
+    "calorieAmount": 98,
+    "timestamp": "2021-11-02T08:53:07.556Z",
+    "userId": "cc6f5461-6b73-4beb-8a6a-7f6b0c26ec1f"
+  },
+  {
+    "itemName": "Bacon, egg and cheese",
+    "calorieAmount": 269,
+    "timestamp": "2021-10-29T02:01:15.504Z",
+    "userId": "a2930685-57bd-49c4-ad9f-d14587fc0b01"
+  },
+  {
+    "itemName": "Welsh rarebit",
+    "calorieAmount": 5,
+    "timestamp": "2021-11-01T10:07:52.137Z",
+    "userId": "75587876-0999-4534-a633-3882b7a6be53"
+  },
+  {
+    "itemName": "Peanut butter and jelly",
+    "calorieAmount": 157,
+    "timestamp": "2021-10-28T05:43:46.066Z",
+    "userId": "6fe206ee-8f27-4274-8943-4af5a78c340f"
+  },
+  {
+    "itemName": "Beschuit met muisjes",
+    "calorieAmount": 313,
+    "timestamp": "2021-10-29T09:59:33.432Z",
+    "userId": "5e11b50d-29f1-49a1-8d0d-d03d0c53b970"
+  },
+  {
+    "itemName": "Polish boy",
+    "calorieAmount": 248,
+    "timestamp": "2021-11-01T18:09:35.478Z",
+    "userId": "1920f89a-aa1f-42c2-bfae-d02a39ff648f"
+  },
+  {
+    "itemName": "Denver",
+    "calorieAmount": 77,
+    "timestamp": "2021-10-28T00:08:10.677Z",
+    "userId": "cc0eb6fa-72e9-4ef0-b17e-6edea1c66804"
+  },
+  {
+    "itemName": "Hot dog",
+    "calorieAmount": 481,
+    "timestamp": "2021-10-30T09:14:54.740Z",
+    "userId": "ccf3fb18-de7e-44c6-b5ec-73a7b8cb840f"
+  },
+  {
+    "itemName": "Bosna",
+    "calorieAmount": 385,
+    "timestamp": "2021-11-02T18:29:45.781Z",
+    "userId": "e83c128e-c262-4a7c-a27a-c817274c0321"
+  },
+  {
+    "itemName": "Open-faced sandwich",
+    "calorieAmount": 445,
+    "timestamp": "2021-10-30T04:49:10.542Z",
+    "userId": "15a4f41d-d9bb-4a51-8530-5dfee44a918b"
+  },
+  {
+    "itemName": "Porilainen",
+    "calorieAmount": 161,
+    "timestamp": "2021-10-29T08:09:47.983Z",
+    "userId": "1568b637-2d94-4c69-bee2-a275d301a7b5"
+  },
+  {
+    "itemName": "Chip butty",
+    "calorieAmount": 483,
+    "timestamp": "2021-10-31T13:44:24.680Z",
+    "userId": "5dff362a-9189-4532-93cb-573f2b28a38a"
+  },
+  {
+    "itemName": "Mortadella",
+    "calorieAmount": 179,
+    "timestamp": "2021-11-01T10:24:38.128Z",
+    "userId": "3f95542b-d7c2-46dd-bf1d-bd1425c37715"
+  },
+  {
+    "itemName": "Chow mein",
+    "calorieAmount": 290,
+    "timestamp": "2021-11-01T00:15:31.943Z",
+    "userId": "db6b00b4-7cca-47a6-ae03-7e939dee868e"
+  },
+  {
+    "itemName": "Donkey burger",
+    "calorieAmount": 232,
+    "timestamp": "2021-10-31T15:19:21.267Z",
+    "userId": "128cc2dc-6744-41d9-aecf-0e48b75845bf"
+  },
+  {
+    "itemName": "Bacon",
+    "calorieAmount": 185,
+    "timestamp": "2021-11-01T07:03:13.957Z",
+    "userId": "845377a1-f056-4aa1-8267-3549239dd32b"
+  },
+  {
+    "itemName": "Toastie",
+    "calorieAmount": 440,
+    "timestamp": "2021-11-01T12:17:59.487Z",
+    "userId": "c498397e-a26f-431c-978d-a2f88b37016e"
+  },
+  {
+    "itemName": "Barros Luco",
+    "calorieAmount": 460,
+    "timestamp": "2021-10-30T17:49:04.384Z",
+    "userId": "1ac4b5b0-7785-43a5-a5ef-53ecd0ce1752"
+  },
+  {
+    "itemName": "Fischbrötchen",
+    "calorieAmount": 1,
+    "timestamp": "2021-10-29T16:18:42.574Z",
+    "userId": "7d665ba9-4602-42dc-a467-01c34f9e2f6a"
+  },
+  {
+    "itemName": "Barbecue",
+    "calorieAmount": 282,
+    "timestamp": "2021-10-31T06:32:59.256Z",
+    "userId": "1e19688f-b79f-42a8-99bd-6951a26bd5ee"
+  },
+  {
+    "itemName": "Pan-bagnat",
+    "calorieAmount": 111,
+    "timestamp": "2021-10-30T12:45:14.420Z",
+    "userId": "a9578cf2-dcea-45b0-970c-bb862e66f47c"
+  },
+  {
+    "itemName": "Ice cream",
+    "calorieAmount": 288,
+    "timestamp": "2021-11-02T19:54:06.048Z",
+    "userId": "2ebd1728-8e76-4fed-9a53-b62ac0203dec"
+  },
+  {
+    "itemName": "The Scooch",
+    "calorieAmount": 453,
+    "timestamp": "2021-10-28T16:35:08.037Z",
+    "userId": "09352d44-ec77-4ac0-8894-7a08e567aeb8"
+  },
+  {
+    "itemName": "Bun kebab",
+    "calorieAmount": 429,
+    "timestamp": "2021-11-02T07:01:49.693Z",
+    "userId": "faa386e2-91f8-4d19-8abf-0a38a3e6617f"
+  },
+  {
+    "itemName": "Gyro",
+    "calorieAmount": 120,
+    "timestamp": "2021-11-01T20:26:28.995Z",
+    "userId": "c5110e13-53a0-4c9e-a67c-de28592c66aa"
+  },
+  {
+    "itemName": "Hot chicken",
+    "calorieAmount": 233,
+    "timestamp": "2021-10-29T17:41:35.531Z",
+    "userId": "b91fcfda-b9c9-41d4-9032-5962ffc0d8f3"
+  },
+  {
+    "itemName": "Kottenbutter",
+    "calorieAmount": 187,
+    "timestamp": "2021-10-31T06:47:07.125Z",
+    "userId": "a8d3b77f-9614-4e58-bd04-a56e6e559835"
+  },
+  {
+    "itemName": "De miga",
+    "calorieAmount": 238,
+    "timestamp": "2021-10-28T21:10:59.814Z",
+    "userId": "e07c1879-f0d9-4aa1-8943-2971c4ebac7f"
+  },
+  {
+    "itemName": "Hot dog",
+    "calorieAmount": 402,
+    "timestamp": "2021-10-29T04:04:16.705Z",
+    "userId": "2a880ba1-46d3-48ed-ad6b-010789673458"
+  },
+  {
+    "itemName": "Pljeskavica",
+    "calorieAmount": 472,
+    "timestamp": "2021-11-02T03:33:50.215Z",
+    "userId": "4b9a54d6-0dbf-41a4-8c52-7e046cc9f704"
+  },
+  {
+    "itemName": "Jucy Lucy",
+    "calorieAmount": 330,
+    "timestamp": "2021-10-28T23:13:38.899Z",
+    "userId": "5e07e319-f5da-4b05-a86b-dcac51867605"
+  },
+  {
+    "itemName": "Hot chicken",
+    "calorieAmount": 9,
+    "timestamp": "2021-10-28T08:47:24.462Z",
+    "userId": "5a394fe4-0e41-49eb-a13d-bb8479baac21"
+  },
+  {
+    "itemName": "Beschuit met muisjes",
+    "calorieAmount": 69,
+    "timestamp": "2021-10-31T00:08:39.194Z",
+    "userId": "da5808fa-31ce-4262-9658-022e95111a64"
+  },
+  {
+    "itemName": "Chili burger",
+    "calorieAmount": 399,
+    "timestamp": "2021-10-29T07:35:17.153Z",
+    "userId": "0f115a0c-ab11-41dd-b010-6a747a9bd1d1"
+  },
+  {
+    "itemName": "Fried brain",
+    "calorieAmount": 291,
+    "timestamp": "2021-10-29T01:52:03.584Z",
+    "userId": "96197ffa-e43f-43fb-a664-772bce977e17"
+  },
+  {
+    "itemName": "Corned beef",
+    "calorieAmount": 487,
+    "timestamp": "2021-10-29T13:58:07.067Z",
+    "userId": "f7df3425-458a-4f97-9135-e5d8f9678927"
+  },
+  {
+    "itemName": "Toast Hawaii",
+    "calorieAmount": 2,
+    "timestamp": "2021-10-30T23:20:48.378Z",
+    "userId": "fdfc725d-d3e7-4f76-8dee-548de73430fe"
+  },
+  {
+    "itemName": "Baked bean",
+    "calorieAmount": 298,
+    "timestamp": "2021-10-28T00:27:40.741Z",
+    "userId": "161bbb42-95dd-4c0e-b512-9f5c1b6120aa"
+  },
+  {
+    "itemName": "Horseshoe",
+    "calorieAmount": 447,
+    "timestamp": "2021-10-28T06:00:56.247Z",
+    "userId": "d2f39b22-b5c4-4033-8606-401ccf2dc534"
+  },
+  {
+    "itemName": "Tavern",
+    "calorieAmount": 145,
+    "timestamp": "2021-11-01T08:55:02.786Z",
+    "userId": "eba5cfc4-03c1-43c8-a8ca-116caa6f599a"
+  },
+  {
+    "itemName": "Welsh rarebit",
+    "calorieAmount": 443,
+    "timestamp": "2021-10-30T07:24:05.993Z",
+    "userId": "d8933677-d18c-4140-801c-e76d8aa02305"
+  },
+  {
+    "itemName": "Francesinha",
+    "calorieAmount": 133,
+    "timestamp": "2021-10-28T23:32:22.809Z",
+    "userId": "647c59cf-f579-4346-83bd-fed8c0895264"
+  },
+  {
+    "itemName": "De miga",
+    "calorieAmount": 487,
+    "timestamp": "2021-10-28T20:47:05.282Z",
+    "userId": "bd9ebe60-32b5-42ee-90ea-f7ac5cf45d8e"
+  },
+  {
+    "itemName": "Tea",
+    "calorieAmount": 37,
+    "timestamp": "2021-11-01T07:00:58.664Z",
+    "userId": "fce628cb-67e4-4dbf-8cd5-08b3dacd1431"
+  },
+  {
+    "itemName": "Wurstbrot (sausage bread)",
+    "calorieAmount": 162,
+    "timestamp": "2021-10-28T02:22:40.546Z",
+    "userId": "37f66ce6-a9d1-41bd-ac9b-abbc9780a48b"
+  },
+  {
+    "itemName": "Fluffernutter",
+    "calorieAmount": 128,
+    "timestamp": "2021-10-30T16:44:25.519Z",
+    "userId": "14e9aabd-32d8-4651-b182-6417194192c5"
+  },
+  {
+    "itemName": "Chicken salad",
+    "calorieAmount": 366,
+    "timestamp": "2021-10-28T06:03:45.917Z",
+    "userId": "61300a53-f864-48e6-b6c1-96c28acf3a85"
+  },
+  {
+    "itemName": "Fool's Gold Loaf",
+    "calorieAmount": 218,
+    "timestamp": "2021-11-01T03:25:13.129Z",
+    "userId": "41328ee4-dd97-4c32-abad-73c1fa827f1a"
+  },
+  {
+    "itemName": "Barros Jarpa",
+    "calorieAmount": 499,
+    "timestamp": "2021-10-28T22:40:09.808Z",
+    "userId": "f0e4c7ab-49e5-4cd0-a72f-82495f492edf"
+  },
+  {
+    "itemName": "Corned beef",
+    "calorieAmount": 429,
+    "timestamp": "2021-11-02T05:08:30.512Z",
+    "userId": "ba22c726-e2d5-4b62-86bc-552d01f723c8"
+  },
+  {
+    "itemName": "Fool's Gold Loaf",
+    "calorieAmount": 452,
+    "timestamp": "2021-10-28T15:26:34.766Z",
+    "userId": "d91ff6e6-083a-48f6-a0ae-7af4b386fc64"
+  },
+  {
+    "itemName": "Mortadella",
+    "calorieAmount": 404,
+    "timestamp": "2021-10-28T03:38:47.649Z",
+    "userId": "e02b9f9a-1255-4591-aea3-2b7df86ba907"
+  },
+  {
+    "itemName": "Hamburger",
+    "calorieAmount": 380,
+    "timestamp": "2021-10-29T00:33:49.748Z",
+    "userId": "02dcb149-0133-451a-8279-77de248bca6e"
+  },
+  {
+    "itemName": "Shawarma",
+    "calorieAmount": 472,
+    "timestamp": "2021-10-28T08:14:40.972Z",
+    "userId": "81643f8a-6aa4-40e9-b3f2-62e9347b32cb"
+  },
+  {
+    "itemName": "Sloppy joe (New Jersey)",
+    "calorieAmount": 375,
+    "timestamp": "2021-11-01T23:38:52.721Z",
+    "userId": "f00b467c-06e0-4510-ae01-5a3a0d186fff"
+  },
+  {
+    "itemName": "Guajolota",
+    "calorieAmount": 55,
+    "timestamp": "2021-10-31T06:23:26.459Z",
+    "userId": "3756a8df-606e-4324-8bad-c6123c649216"
+  },
+  {
+    "itemName": "Italian beef",
+    "calorieAmount": 438,
+    "timestamp": "2021-10-28T13:16:43.218Z",
+    "userId": "0fd85e76-bd98-4550-a664-aa45da940a0a"
+  },
+  {
+    "itemName": "Reuben",
+    "calorieAmount": 265,
+    "timestamp": "2021-11-02T22:25:16.482Z",
+    "userId": "42533f40-a1eb-4641-bd4b-f922ae84a00a"
+  },
+  {
+    "itemName": "Hamdog",
+    "calorieAmount": 385,
+    "timestamp": "2021-10-29T15:37:26.952Z",
+    "userId": "12a884d0-9fcb-4f46-a68f-013c98ced382"
+  },
+  {
+    "itemName": "Barros Jarpa",
+    "calorieAmount": 270,
+    "timestamp": "2021-10-28T05:00:53.454Z",
+    "userId": "f1a1f4c0-2f39-42ba-9acc-2c68767f888f"
+  },
+  {
+    "itemName": "Butterbrot",
+    "calorieAmount": 114,
+    "timestamp": "2021-11-01T13:48:13.208Z",
+    "userId": "2ea324a9-a0c7-4e82-9a43-f1017333b399"
+  },
+  {
+    "itemName": "Beef on weck",
+    "calorieAmount": 193,
+    "timestamp": "2021-10-30T21:44:08.705Z",
+    "userId": "8ec79933-69d0-41d3-8a44-c26157b7989a"
+  },
+  {
+    "itemName": "Elvis sandwich",
+    "calorieAmount": 468,
+    "timestamp": "2021-11-02T04:29:34.126Z",
+    "userId": "255ff114-c812-4e58-ab2e-3d349f64959f"
+  },
+  {
+    "itemName": "Pistolette",
+    "calorieAmount": 83,
+    "timestamp": "2021-11-01T22:27:21.159Z",
+    "userId": "eee7afbd-ba62-40ae-91c8-2caef21aab58"
+  },
+  {
+    "itemName": "Chip butty",
+    "calorieAmount": 434,
+    "timestamp": "2021-10-30T19:21:06.964Z",
+    "userId": "86877bc4-28f7-4e4b-bd74-24fbe09e1043"
+  },
+  {
+    "itemName": "Torta",
+    "calorieAmount": 29,
+    "timestamp": "2021-10-30T12:30:01.443Z",
+    "userId": "37e64ea5-7f33-414e-8d7d-ebd3804adc2f"
+  },
+  {
+    "itemName": "Denver",
+    "calorieAmount": 349,
+    "timestamp": "2021-10-31T00:07:23.173Z",
+    "userId": "89c7ab57-1442-4ba4-89f5-cc103a78056f"
+  },
+  {
+    "itemName": "Italiano",
+    "calorieAmount": 66,
+    "timestamp": "2021-11-01T12:18:33.921Z",
+    "userId": "ba666ece-0595-49a3-816a-c25953b08a1f"
+  },
+  {
+    "itemName": "Ham and egg bun",
+    "calorieAmount": 187,
+    "timestamp": "2021-10-29T13:20:41.694Z",
+    "userId": "7c9a71b8-755d-49e6-99bc-f3a586f62039"
+  },
+  {
+    "itemName": "Yakisoba-pan",
+    "calorieAmount": 66,
+    "timestamp": "2021-10-31T20:31:20.412Z",
+    "userId": "5578bbeb-a9e7-41db-b809-c8656c7680b1"
+  },
+  {
+    "itemName": "Pulled pork sandwich",
+    "calorieAmount": 315,
+    "timestamp": "2021-10-28T05:22:52.945Z",
+    "userId": "53aa8514-9e15-4d57-baf9-6beb5e488420"
+  },
+  {
+    "itemName": "Lobster roll",
+    "calorieAmount": 291,
+    "timestamp": "2021-10-28T12:50:40.949Z",
+    "userId": "5d8d3dd6-5c62-413c-869f-cb9bcecf9996"
+  },
+  {
+    "itemName": "Falafel",
+    "calorieAmount": 379,
+    "timestamp": "2021-10-31T01:35:13.365Z",
+    "userId": "e96991f4-950d-4f2c-bc35-51611ca3b33f"
+  },
+  {
+    "itemName": "Crisp",
+    "calorieAmount": 144,
+    "timestamp": "2021-11-01T22:37:22.986Z",
+    "userId": "df64e583-8ad3-482b-b5f8-ecb6e48dcbec"
+  },
+  {
+    "itemName": "De miga",
+    "calorieAmount": 421,
+    "timestamp": "2021-11-02T03:40:28.167Z",
+    "userId": "20e9eada-e131-4cfe-b70e-b24ad5d29669"
+  },
+  {
+    "itemName": "Tongue toast",
+    "calorieAmount": 340,
+    "timestamp": "2021-10-29T11:02:40.012Z",
+    "userId": "cc4fd5bf-5159-4f65-a259-e80ff99ed8d6"
+  },
+  {
+    "itemName": "Cudighi",
+    "calorieAmount": 29,
+    "timestamp": "2021-11-02T17:50:32.891Z",
+    "userId": "a44ff24a-526c-45bc-9b60-6b7cbe3595ea"
+  },
+  {
+    "itemName": "Chip butty",
+    "calorieAmount": 419,
+    "timestamp": "2021-10-28T21:34:37.007Z",
+    "userId": "b30e301c-13d3-4a73-979e-d8e7e9986c91"
+  },
+  {
+    "itemName": "Choripán",
+    "calorieAmount": 334,
+    "timestamp": "2021-10-31T12:47:46.481Z",
+    "userId": "834ec599-3f8f-4866-bab3-aba94343155d"
+  },
+  {
+    "itemName": "Cheese",
+    "calorieAmount": 140,
+    "timestamp": "2021-11-02T06:38:10.474Z",
+    "userId": "cc8a47b4-aae7-4311-8e9f-6dfb9952aa88"
+  },
+  {
+    "itemName": "Naan sandwich",
+    "calorieAmount": 141,
+    "timestamp": "2021-10-28T00:24:47.752Z",
+    "userId": "02e20bdd-8d92-4642-89da-c8654c44ea34"
+  },
+  {
+    "itemName": "Hot dog",
+    "calorieAmount": 304,
+    "timestamp": "2021-10-29T14:51:56.981Z",
+    "userId": "74231f59-5cab-4855-b3cc-aa6a34d71ef0"
+  },
+  {
+    "itemName": "Breakfast",
+    "calorieAmount": 257,
+    "timestamp": "2021-10-28T09:54:55.649Z",
+    "userId": "dcf02473-dfb4-4cb7-bbb4-f46d76fe48e3"
+  },
+  {
+    "itemName": "Runza",
+    "calorieAmount": 59,
+    "timestamp": "2021-10-28T05:40:59.256Z",
+    "userId": "e76c1c71-5e27-440d-9b25-bc6218f90421"
+  },
+  {
+    "itemName": "Pulled pork sandwich",
+    "calorieAmount": 7,
+    "timestamp": "2021-11-01T15:40:35.447Z",
+    "userId": "8d56b208-c77f-41df-9586-c45acfebf98c"
+  },
+  {
+    "itemName": "Steak bomb",
+    "calorieAmount": 487,
+    "timestamp": "2021-11-01T02:21:10.376Z",
+    "userId": "0a9e44b0-f848-4adc-b623-2b7955c93d77"
+  },
+  {
+    "itemName": "Doner kebab",
+    "calorieAmount": 17,
+    "timestamp": "2021-11-01T09:21:28.433Z",
+    "userId": "5cf6c087-43ac-41e6-9ef0-960c308773a3"
+  },
+  {
+    "itemName": "Francesinha",
+    "calorieAmount": 285,
+    "timestamp": "2021-10-31T19:47:04.011Z",
+    "userId": "7fe87a3a-d2eb-4fd1-b49e-2fa4776051d0"
+  },
+  {
+    "itemName": "Croque-monsieur",
+    "calorieAmount": 497,
+    "timestamp": "2021-10-31T01:46:48.908Z",
+    "userId": "8299df89-ae82-44b9-a83d-7eb42714b17e"
+  },
+  {
+    "itemName": "Hot chicken",
+    "calorieAmount": 118,
+    "timestamp": "2021-11-01T05:49:08.511Z",
+    "userId": "a64bbcdf-ee82-4510-b4ba-0e7077aa5d87"
+  },
+  {
+    "itemName": "Bacon, egg and cheese",
+    "calorieAmount": 87,
+    "timestamp": "2021-11-01T04:04:30.025Z",
+    "userId": "c2e3721d-d9f9-4ce8-9d63-18a918f23cdf"
+  },
+  {
+    "itemName": "Bologna sandwich",
+    "calorieAmount": 49,
+    "timestamp": "2021-10-31T19:37:03.514Z",
+    "userId": "dd2e0f4e-5e0c-4fb0-bd29-e659939d5ae7"
+  },
+  {
+    "itemName": "Cucumber",
+    "calorieAmount": 57,
+    "timestamp": "2021-10-28T07:39:25.437Z",
+    "userId": "91874f60-779c-4c3b-8684-fdc15fbc6c67"
+  },
+  {
+    "itemName": "Dagwood",
+    "calorieAmount": 165,
+    "timestamp": "2021-11-01T09:54:30.194Z",
+    "userId": "363c8210-a989-49c5-a6ed-f536c5f31e94"
+  },
+  {
+    "itemName": "Wrap",
+    "calorieAmount": 364,
+    "timestamp": "2021-11-02T02:31:13.036Z",
+    "userId": "d061c7ad-abd3-4e09-a3f4-93811104950a"
+  },
+  {
+    "itemName": "Kokoretsi",
+    "calorieAmount": 419,
+    "timestamp": "2021-10-30T04:56:14.872Z",
+    "userId": "a63e47b1-4f89-44c4-8f47-be7158f06358"
+  },
+  {
+    "itemName": "Vegetable",
+    "calorieAmount": 207,
+    "timestamp": "2021-11-01T18:09:52.513Z",
+    "userId": "9e51c75b-0c85-4215-bc08-77867a468290"
+  },
+  {
+    "itemName": "Wurstbrot (sausage bread)",
+    "calorieAmount": 473,
+    "timestamp": "2021-11-01T22:43:20.314Z",
+    "userId": "3a54891f-4dc3-4628-bd80-9aac0cb8af15"
+  },
+  {
+    "itemName": "Chivito",
+    "calorieAmount": 496,
+    "timestamp": "2021-11-02T06:48:02.342Z",
+    "userId": "36c52158-302e-46b3-ad2d-c349563b7e14"
+  },
+  {
+    "itemName": "Ftira",
+    "calorieAmount": 454,
+    "timestamp": "2021-10-28T21:07:44.136Z",
+    "userId": "03507a48-fb1b-4d87-9ac9-0327ac08e4f7"
+  }
+]
