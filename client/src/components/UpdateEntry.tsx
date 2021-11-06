@@ -13,7 +13,7 @@ const UpdateEntry: React.FC<any> = ({ entry, onUpdate, isOpen, onClose }) => {
     )
   }, [onUpdate])
 
-  return <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
+  return <Drawer placement="right" onClose={onClose} isOpen={isOpen} size="md">
     <DrawerOverlay />
     <DrawerContent>
       <DrawerHeader borderBottomWidth="1px">Update Entry</DrawerHeader>

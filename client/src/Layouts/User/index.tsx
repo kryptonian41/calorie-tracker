@@ -1,22 +1,21 @@
-import React from 'react'
-import UserAppRouter from '../../router/user'
-import { Box, Container, Flex, Text, Stack } from '@chakra-ui/react'
-import AddEntry from '../../components/AddEntry'
+import { Box, Container, Flex, Text } from '@chakra-ui/react';
+import AddEntry from '../../components/AddEntry';
+import WarningNotification from '../../components/WarningNotification';
 import { addEntry } from "../../redux/actions/user";
-
+import UserAppRouter from '../../router/user';
+import { UserHeader } from '../Header';
 
 const UserLayout = () => {
   return (
     <Container maxW="container.xl">
-      <Box pt="4" fontSize="3xl">Calorie Tracker</Box>
-      <Stack direction="row" mt="3" mb="8">
-        <Box background="teal" w="150px" height="5px"></Box>
-        <Box background="whiteAlpha.700" w="50px" height="5px"></Box>
-      </Stack>
+      <UserHeader />
       <Flex>
         <Box w="25%">
-          <Text mb="3" fontSize="xl"> Add an Entry </Text>
+          <Text mb="3" fontSize="xl" casing="uppercase"> Add an Entry </Text>
           <AddEntry onAdd={addEntry} />
+          <Box mt="6">
+            <WarningNotification />
+          </Box>
         </Box>
         <Box flex="1">
           <UserAppRouter />

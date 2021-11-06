@@ -7,7 +7,7 @@ import { Provider } from 'react-redux'
 import { configureStore } from './redux';
 import { createAxiosInstance } from './config/axios';
 import { ChakraProvider } from "@chakra-ui/react"
-import EntriesSeedData from './config/seed-data/store-seed.json'
+// import EntriesSeedData from './config/seed-data/store-seed.json'
 import { BrowserRouter } from "react-router-dom";
 import theme from './utils/theme';
 
@@ -16,9 +16,7 @@ createAxiosInstance({
   userToken: process.env.REACT_APP_USER_TOKEN as string
 })
 
-const store = configureStore({
-  entries: EntriesSeedData
-})
+const store = configureStore()
 
 ReactDOM.render(
   <React.StrictMode>

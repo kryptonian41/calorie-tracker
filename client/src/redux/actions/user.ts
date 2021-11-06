@@ -1,6 +1,7 @@
-import { axios } from "../../config/axios"
 import { sub } from 'date-fns'
-import { EntriesAction, UserAction } from './types'
+import { axios } from "../../config/axios"
+import { timePromise } from '../../utils'
+import { EntriesAction } from './types'
 
 const defaultDateRange = {
   minDate: sub(Date.now(), {
@@ -9,13 +10,9 @@ const defaultDateRange = {
   maxDate: new Date().toISOString()
 }
 
-export const getUserInfo = () => async dispatch => {
-  const { data: userData } = await axios.get('/auth/me')
-  dispatch({ type: UserAction.SET_USER_INFO, payload: userData })
-}
-
 export const getUserBootstrapData = (dateRange = defaultDateRange) => async dispatch => {
   const { data: entries } = await axios.post('/user/get-entries', dateRange)
+  await timePromise(1500)
   dispatch({ type: EntriesAction.SET_ENTRIES, payload: entries })
 }
 

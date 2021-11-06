@@ -7,7 +7,7 @@ import * as yup from 'yup';
 import { isBefore } from 'date-fns'
 
 //@ts-ignore
-const DateInput = forwardRef(({ value, onClick }, ref) => <Input value={value} isReadOnly onClick={onClick} ref={ref} />)
+export const DateInput = forwardRef(({ value, onClick }, ref) => <Input value={value} isReadOnly onClick={onClick} ref={ref} />)
 
 const calorieFormValidationSchema = yup.object().shape({
   itemName: yup.string().required(),
@@ -38,7 +38,7 @@ export const CalorieForm = ({
       }) => (
         <form onSubmit={handleSubmit}>
           <Stack spacing="3">
-            <Input placeholder="Item Name" name="itemName" value={values.itemName} onChange={handleChange} />
+            <Input placeholder="Item Name" name="itemName" value={values.itemName} onChange={handleChange} focusBorderColor="cyan.200" />
             <ErrorMessage name="itemName" component="div" />
             <Input placeholder="Calorie Amount" type="number" name="calorieAmount" value={values.calorieAmount} onChange={handleChange} />
             <ErrorMessage name="calorieAmount" component="div" />
