@@ -1,4 +1,5 @@
 import jwt from "jsonwebtoken";
+import { ROLES } from "../types";
 const config = process.env;
 
 export const verifyToken = (req, res, next) => {
@@ -17,3 +18,9 @@ export const verifyToken = (req, res, next) => {
   }
   return next();
 };
+
+
+export const verifyAdminUser = (req, res, next) => {
+  if (req.user.role === ROLES.Admin) next()
+  else next(new Error('Unsufficient access'))
+}

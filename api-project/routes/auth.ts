@@ -2,14 +2,13 @@ import bcrypt from 'bcryptjs'
 import jwt from 'jsonwebtoken'
 import { UserModel as User } from '../models/User'
 import express from 'express'
+import { ROLES } from '../types'
+import { verifyToken } from '../middlewares'
 const router = express.Router()
 
-enum ROLES {
-  User = 'User',
-  Admin = 'Admin'
-}
+router.get("/me", verifyToken, (req, res) => res.json(req.user))
 
-router.post("/register", async (req, res) => {
+router.post("/register", async (req, res, next) => {
   try {
     const { name, email } = req.body;
     if (!(email && name)) {
@@ -28,20 +27,35 @@ router.post("/register", async (req, res) => {
       role: ROLES.User
     });
 
-    const token = jwt.sign(
-      { user_id: user._id, email, role: user.role },
-      process.env.SECRET_KEY,
-      {
-        expiresIn: "72h",
-      }
-    );
-
-    user.token = token;
-    res.status(201).json(user);
+    user.token = createUserToken(user)
+    res.status(201).json({ ...user.toJSON(), password: randomPassword });
   } catch (err) {
     console.log(err);
+    next(err)
   }
 });
 
+
+router.post('/login', async (req, res, next) => {
+  try {
+    const { email, password } = req.body
+    const user = await User.findOne({ email });
+    if (!user) throw Error('User not found')
+    const isValid = await bcrypt.compare(password, user.password)
+    if (!isValid) return res.status(403).send('Incorrect Credentials')
+    const token = createUserToken(user)
+    return res.json({ ...user.toJSON(), token })
+  } catch (error) {
+    next(error)
+  }
+})
+
+const createUserToken = ({ _id, email, role }) => jwt.sign(
+  { id: _id, email, role },
+  process.env.SECRET_KEY,
+  {
+    expiresIn: "72h",
+  }
+);
 
 export default router

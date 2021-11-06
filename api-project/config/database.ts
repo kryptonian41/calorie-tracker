@@ -6,9 +6,7 @@ export const connect = (cb) => {
   mongoose
     .connect(MONGO_URI, {
       useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true,
-      useFindAndModify: false,
+      useUnifiedTopology: true
     })
     .then(() => {
       console.log("Successfully connected to database");
