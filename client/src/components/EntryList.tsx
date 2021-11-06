@@ -55,8 +55,8 @@ const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Pr
 
       {
         loadingEntries ?
-          // <Center mt="7"><CircularProgress isIndeterminate color="teal.400" /></Center>
-          null
+          <Center mt="7"><CircularProgress isIndeterminate color="teal.500" /></Center>
+          // null
           : entries && entries.length > 0 ?
             <Fade in>
               <Stack spacing="4" mt="3">

@@ -48,7 +48,7 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
             maxDate={new Date()}
           />
         </InputGroup>
-        <Button isLoading={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdRefresh size="20px" />} iconSpacing="0" variant="outline">
+        <Button disabled={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdRefresh size="20px" />} iconSpacing="0" variant="outline">
         </Button>
       </Stack>
     </Box>
