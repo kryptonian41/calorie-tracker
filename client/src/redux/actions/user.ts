@@ -1,7 +1,7 @@
 import { sub } from 'date-fns'
 import { axios } from "../../config/axios"
 import { timePromise } from '../../utils'
-import { EntriesAction } from './types'
+import { EntriesAction, MetaAction } from './types'
 
 const defaultDateRange = {
   minDate: sub(Date.now(), {
@@ -11,9 +11,12 @@ const defaultDateRange = {
 }
 
 export const getUserBootstrapData = (dateRange = defaultDateRange) => async dispatch => {
+  dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: true })
+
   const { data: entries } = await axios.post('/user/get-entries', dateRange)
   await timePromise(1500)
   dispatch({ type: EntriesAction.SET_ENTRIES, payload: entries })
+  dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: false })
 }
 
 export const addEntry = (entry, onDone) => async dispatch => {

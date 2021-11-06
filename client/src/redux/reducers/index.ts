@@ -1,15 +1,14 @@
 import { combineReducers } from 'redux'
+import { RootState } from '..'
 import entriesReducer from './entries'
+import metaReducer from './meta'
 import userReducer from './user'
 
-export interface ReduxRootState {
-  entries: any,
-  user: any
-}
 
-const rootReducer = combineReducers<ReduxRootState>({
+const rootReducer = combineReducers<RootState>({
   entries: entriesReducer,
-  user: userReducer
+  user: userReducer,
+  meta: metaReducer
 })
 
 export default rootReducer

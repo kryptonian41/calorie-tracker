@@ -1,4 +1,4 @@
-import { Box, Text, Stack, useDisclosure } from '@chakra-ui/react'
+import { Box, Text, Stack, useDisclosure, CircularProgress, Center, Fade } from '@chakra-ui/react'
 import React, { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import EntryListItem from './EntryListItem'
@@ -15,6 +15,7 @@ interface Props {
 
 const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Props) => {
   const entries = useSelector<RootState, any[]>(state => state.entries)
+  const loadingEntries = useSelector<RootState, boolean>(state => state.meta.loadingEntries)
   const [selectedEntry, setSelectedEntry] = useState<any>(null)
   const { isOpen: isDeleteModalOpen, onOpen: openDeleteModal, onClose: closeDeleteModal } = useDisclosure()
   const { isOpen: isUpdateModalOpen, onOpen: openUpdateModal, onClose: closeUpdateModal } = useDisclosure()
@@ -51,12 +52,24 @@ const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Pr
     <Box fontSize="xl">
       <Text casing="uppercase">Entries</Text>
       <DateFilter refreshAction={refreshAction}></DateFilter>
-      <Stack spacing="3" mt="3">
-        {entries && entries.length > 0 ?
-          entries.map(entry => <EntryListItem key={entry._id} entry={entry} onDelete={onDelete(entry)} onUpdate={onUpdate(entry)} />)
-          : <Text textAlign="center" mt="6" color="gray.400" fontWeight="bold" fontSize="2xl">No entries found</Text>
-        }
-      </Stack>
+
+      {
+        loadingEntries ?
+          // <Center mt="7"><CircularProgress isIndeterminate color="teal.400" /></Center>
+          null
+          : entries && entries.length > 0 ?
+            <Fade in>
+              <Stack spacing="4" mt="3">
+                {
+                  entries.map(entry =>
+                    <EntryListItem key={entry._id} entry={entry} onDelete={onDelete(entry)} onUpdate={onUpdate(entry)} />
+                  )
+                }
+              </Stack>
+            </Fade>
+            : <Text textAlign="center" mt="6" color="gray.400" fontWeight="bold" fontSize="2xl">No entries found</Text>
+      }
+
       <DeleteEntryConfirmationModal isOpen={isDeleteModalOpen} onClose={closeDeleteModal} onDelete={deleteEntry} />
       <UpdateEntry entry={selectedEntry} onUpdate={updateEntry} isOpen={isUpdateModalOpen} onClose={closeUpdateModal} />
     </Box>

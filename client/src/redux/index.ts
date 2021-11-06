@@ -17,6 +17,7 @@ export const configureStore = (preloadedState?: object): Store => {
 
 
 export interface RootState {
-  entries: any[],
-  user: any
+  entries: any,
+  user: any,
+  meta: any
 }

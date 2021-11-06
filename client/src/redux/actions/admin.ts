@@ -1,6 +1,6 @@
 import { axios } from "../../config/axios"
 import { subDays } from 'date-fns'
-import { EntriesAction, AdminAction } from './types'
+import { EntriesAction, AdminAction, MetaAction } from './types'
 import { timePromise } from "../../utils"
 
 const defaultDateRange = {
@@ -14,9 +14,11 @@ export const getAdminBootstrapData = (dateRange = defaultDateRange) => async dis
 }
 
 export const getAdminEntries = (dateRange = defaultDateRange, onDone = () => { }) => async dispatch => {
+  dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: true })
   const { data: entries } = await axios.post('/admin/get-entries', dateRange)
   await timePromise(2000)
   dispatch({ type: EntriesAction.SET_ENTRIES, payload: entries })
+  dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: false })
   onDone && onDone()
 }
 

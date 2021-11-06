@@ -10,3 +10,8 @@ export enum EntriesAction {
 export enum AdminAction {
   SET_REPORT_INFO = "SET_REPORT_INFO"
 }
+
+export enum MetaAction {
+  SET_LOADING_ENTRIES = "SET_LOADING_ENTRIES",
+  SET_LOADING_USER_INFO = "SET_LOADING_USER_INFO"
+}
