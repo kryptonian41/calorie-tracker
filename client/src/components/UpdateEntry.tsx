@@ -1,9 +1,10 @@
 import React, { useCallback } from 'react';
-import { DrawerBody, Drawer, DrawerContent, DrawerOverlay, DrawerHeader, Box } from '@chakra-ui/react'
+import { DrawerBody, Drawer, DrawerContent, DrawerOverlay, DrawerHeader, Box, useBreakpointValue, Button } from '@chakra-ui/react'
 import { CalorieForm } from './CalorieEntryForm';
 
 
 const UpdateEntry: React.FC<any> = ({ entry, onUpdate, isOpen, onClose }) => {
+  const showCloseButton = useBreakpointValue({ md: false, base: true })
   const handleUpdate = useCallback((values, { setSubmitting, resetForm }) => {
     onUpdate(values,
       () => {
@@ -29,6 +30,11 @@ const UpdateEntry: React.FC<any> = ({ entry, onUpdate, isOpen, onClose }) => {
               }}
               buttonText="Update"
             />
+            {showCloseButton &&
+              <Box mt="3">
+                <Button onClick={onClose} isFullWidth>Close</Button>
+              </Box>
+            }
           </Box>
         }
       </DrawerBody>

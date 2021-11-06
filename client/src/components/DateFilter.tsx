@@ -1,6 +1,7 @@
 import { Button } from '@chakra-ui/button';
 import { InputGroup, InputLeftAddon } from '@chakra-ui/input';
 import { Box, Stack } from '@chakra-ui/layout';
+import { useBreakpointValue } from '@chakra-ui/media-query';
 import { addDays, subDays } from 'date-fns';
 import React, { useCallback, useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
@@ -12,6 +13,7 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
   const [value, setValue] = useState(initialValues)
   const [isLoadingEntries, setIsLoadingEntries] = useState(false)
   const dispatch = useDispatch()
+  const buttonText = useBreakpointValue({ base: 'Refresh', md: null })
 
   const refreshEntries = useCallback(async () => {
     setIsLoadingEntries(true)
@@ -25,10 +27,9 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
 
   return (
     <Box my="4">
-      <Stack direction="row">
+      <Stack direction={{ md: 'row', base: 'column' }}>
         <InputGroup>
           <InputLeftAddon children="From" />
-          {/* <Input type="tel" placeholder="phone number" /> */}
           <DatePicker
             selected={value.from}
             onChange={(from) => setValue(value => ({ ...value, from }))}
@@ -48,7 +49,8 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
             maxDate={new Date()}
           />
         </InputGroup>
-        <Button disabled={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdRefresh size="20px" />} iconSpacing="0" variant="outline">
+        <Button disabled={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdRefresh size="20px" />} iconSpacing={{ md: 0, base: 2 }} variant="outline" flexShrink={0}>
+          {buttonText}
         </Button>
       </Stack>
     </Box>

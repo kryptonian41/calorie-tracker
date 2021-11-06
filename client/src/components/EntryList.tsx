@@ -1,4 +1,4 @@
-import { Box, Text, Stack, useDisclosure, CircularProgress, Center, Fade } from '@chakra-ui/react'
+import { Box, Text, Stack, useDisclosure, CircularProgress, Skeleton, Fade } from '@chakra-ui/react'
 import React, { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import EntryListItem from './EntryListItem'
@@ -12,6 +12,19 @@ interface Props {
   updateEntryAction: any,
   refreshAction: any,
 }
+
+const LoadingStack = () => {
+  return <Stack spacing="4">
+    {(new Array(3).fill(0)).map((_, i) => (
+      <Stack opacity={0.4 / i} border="1px" borderColor="gray.600" borderRadius="8" p="6" spacing="4">
+        <Skeleton borderRadius="8" fadeDuration={0.6} w="25%" height="20px" />
+        <Skeleton borderRadius="8" fadeDuration={0.6} w="20%" mt="12" height="20px" />
+        <Skeleton borderRadius="8" fadeDuration={0.6} w="30%" mt="12" height="20px" />
+      </Stack>
+    ))}
+  </Stack>
+}
+
 
 const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Props) => {
   const entries = useSelector<RootState, any[]>(state => state.entries)
@@ -55,10 +68,10 @@ const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Pr
 
       {
         loadingEntries ?
-          <Center mt="7"><CircularProgress isIndeterminate color="teal.500" /></Center>
+          <LoadingStack />
           // null
           : entries && entries.length > 0 ?
-            <Fade in>
+            <Fade in >
               <Stack spacing="4" mt="3">
                 {
                   entries.map(entry =>
@@ -77,3 +90,4 @@ const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Pr
 }
 
 export default EntriesList
+

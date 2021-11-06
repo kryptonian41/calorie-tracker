@@ -9,15 +9,13 @@ const UserLayout = () => {
   return (
     <Container maxW="container.xl">
       <UserHeader />
-      <Flex>
-        <Box w="25%">
+      <Flex direction={{ base: "column", md: "row" }}>
+        <Box w={{ base: "100%", md: "25%" }}>
           <Text mb="3" fontSize="xl" casing="uppercase"> Add an Entry </Text>
           <AddEntry onAdd={addEntry} />
-          <Box mt="6">
-            <WarningNotification />
-          </Box>
+          <WarningNotification />
         </Box>
-        <Box flex="1">
+        <Box flex="1" pl={{ base: 0, md: 8 }} py={{ base: 8, md: 0 }}>
           <UserAppRouter />
         </Box>
       </Flex>

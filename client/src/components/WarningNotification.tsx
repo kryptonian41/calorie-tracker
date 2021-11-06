@@ -50,13 +50,16 @@ const WarningNotification = () => {
 
   return (
     showNotificationWarning && !notificationInfo.seen ?
-      <Box backgroundColor="gray.700" p="4" borderRadius="8" boxShadow="lg" borderColor="blue.400" border="1px">
+      <Box mt="4" backgroundColor="gray.700" p="4" borderRadius="8" boxShadow="lg" borderColor="blue.400" border="1px">
         <Stack direction="row" alignItems="center">
           <MdWarningAmber size="25px" />
           <Text casing="uppercase">Warning</Text>
         </Stack>
         <Text mt="4">
           You have consumed more than your calorie limit for the last 7 days
+        </Text>
+        <Text mt="4" color="teal.400" fontWeight="semibold">
+          Weekly Limit is {CalorieLimitMap[user.email]} calories
         </Text>
         <Box display="flex" mt="4">
           <Button onClick={dismissNotification}>Dismiss</Button>
