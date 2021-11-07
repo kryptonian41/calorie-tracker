@@ -17,6 +17,7 @@ export const getAdminBootstrapData = (dateRange = defaultDateRange) => async dis
 export const getAdminEntries = (dateRange = defaultDateRange, onDone = () => { }) => async dispatch => {
   dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: true })
   const { data: entries } = await axios.post('/admin/get-entries', dateRange)
+  // NOTE: this is a hack to create illusation of delay while loading, should be removed in production
   await timePromise(2000)
   dispatch({ type: EntriesAction.SET_ENTRIES, payload: entries })
   dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: false })
@@ -33,6 +34,7 @@ export const getUsersList = () => async dispatch => {
 export const getAdminReports = (dateRange = defaultDateRange) => async dispatch => {
   dispatch({ type: MetaAction.SET_LOADING_REPORT_DATA, payload: true })
   const { data: report } = await axios.get('/admin/get-report')
+  // NOTE: this is a hack to create illusation of delay while loading, should be removed in production
   await timePromise(2000)
   dispatch({ type: AdminAction.SET_REPORT_INFO, payload: report })
   dispatch({ type: MetaAction.SET_LOADING_REPORT_DATA, payload: false })

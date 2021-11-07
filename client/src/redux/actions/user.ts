@@ -12,8 +12,8 @@ const defaultDateRange = {
 
 export const getUserBootstrapData = (dateRange = defaultDateRange) => async dispatch => {
   dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: true })
-
   const { data: entries } = await axios.post('/user/get-entries', dateRange)
+  // NOTE: this is a hack to create illusation of delay while loading, should be removed in production
   await timePromise(1500)
   dispatch({ type: EntriesAction.SET_ENTRIES, payload: entries })
   dispatch({ type: MetaAction.SET_LOADING_ENTRIES, payload: false })
