@@ -5,9 +5,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import { MdRefresh } from 'react-icons/md';
 import { getAdminReports } from '../../../redux/actions';
 import { LoadingStack } from '../../../components/EntryList';
+import { RootState } from '../../../redux';
+import { Report } from '../../../types';
 
-const Report = () => {
-  const report = useSelector((state: any) => state.admin.report)
+const ReportScreen = () => {
+  const report = useSelector<RootState, Report>((state: any) => state.admin.report)
   const isloadingReportData = useSelector((state: any) => state.meta.loadingReportData)
   const dispatch = useDispatch()
 
@@ -15,9 +17,15 @@ const Report = () => {
     dispatch(getAdminReports())
   }, [dispatch])
 
-  const { entryAddedMetrics: { firstWeek, secondWeek }, calorieAmountReport, avgCalAddedPerUser } = report
+
+  //@ts-ignore
+  const { entryAddedMetrics, calorieAmountReport, avgCalAddedPerUser } = useMemo(() => {
+    if (isloadingReportData) return {}
+    else return report
+  }, [report, isloadingReportData])
 
   const increasePercentage = useMemo(() => {
+    if (!report) return 0
     const { entryAddedMetrics: { firstWeek, secondWeek } } = report
     return ((firstWeek.count - secondWeek.count) / secondWeek.count) * 100
   }, [report])
@@ -46,19 +54,19 @@ const Report = () => {
             <StatGroup direction="row" border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
               <Stat>
                 <StatLabel>Entries added in the last 7 days</StatLabel>
-                <StatNumber>{firstWeek.count}</StatNumber>
+                <StatNumber>{entryAddedMetrics.firstWeek.count}</StatNumber>
                 <StatHelpText>{dateRangeText.firstWeek}</StatHelpText>
                 <StatArrow type="increase" />
                 {increasePercentage}%
               </Stat>
               <Stat>
                 <StatLabel>Entries added in the last 7-14 days</StatLabel>
-                <StatNumber>{secondWeek.count}</StatNumber>
+                <StatNumber>{entryAddedMetrics.secondWeek.count}</StatNumber>
                 <StatHelpText>{dateRangeText.secondWeek}</StatHelpText>
               </Stat>
               <Stat>
                 <StatLabel>Average Calories added by all users in last 7 days</StatLabel>
-                <StatNumber>{avgCalAddedPerUser} Calories</StatNumber>
+                <StatNumber>{avgCalAddedPerUser.toFixed(2)} Calories</StatNumber>
               </Stat>
             </StatGroup>
 
@@ -71,7 +79,7 @@ const Report = () => {
                       <Avatar name={item.userDetails.name} size="sm" bg="gray.600" color="white" />
                       <Text color="gray.400" fontSize="lg">{item.userDetails.email}</Text>
                     </Stack>
-                    <Text fontWeight="bold" fontSize="xl">{item.avgCalories} Cals.</Text>
+                    <Text fontWeight="bold" fontSize="xl">{item.avgCalories.toFixed(2)} Cals.</Text>
                   </Stack>)
                 }
               </Grid>
@@ -82,4 +90,4 @@ const Report = () => {
   )
 }
 
-export default Report
+export default ReportScreen
