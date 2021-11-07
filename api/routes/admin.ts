@@ -7,8 +7,8 @@ router.use(verifyToken)
 router.use(verifyAdminUser)
 
 // TODO: Implement aggregations
-router.post('/get-report', async (req, res) => {
-
+router.get('/get-report', async (req, res) => {
+  res.json(await CalorieEntry.getWeeklyReport())
 })
 
 router.post('/get-entries', async (req, res) => {
@@ -16,6 +16,10 @@ router.post('/get-entries', async (req, res) => {
   const entries = await CalorieEntry.find()
     .sort({ timestamp: 1 })
     .ByDate({ dateRange: { min: minDate, max: maxDate } })
+    .populate({ path: 'userId', select: 'name email' })
+    .transform(res => res.map(res => {
+      return { ...res.toJSON(), user: res.userId, userId: undefined }
+    }))
     .exec()
   res.json(entries)
 })
