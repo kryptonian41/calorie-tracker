@@ -11,6 +11,7 @@ interface Props {
   deleteEntryAction: any,
   updateEntryAction: any,
   refreshAction: any,
+  showUserInfo?: boolean
 }
 
 const LoadingStack = () => {
@@ -26,7 +27,7 @@ const LoadingStack = () => {
 }
 
 
-const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Props) => {
+const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction, showUserInfo = false }: Props) => {
   const entries = useSelector<RootState, any[]>(state => state.entries)
   const loadingEntries = useSelector<RootState, boolean>(state => state.meta.loadingEntries)
   const [selectedEntry, setSelectedEntry] = useState<any>(null)
@@ -75,7 +76,7 @@ const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction }: Pr
               <Stack spacing="4" mt="3">
                 {
                   entries.map(entry =>
-                    <EntryListItem key={entry._id} entry={entry} onDelete={onDelete(entry)} onUpdate={onUpdate(entry)} />
+                    <EntryListItem key={entry._id} entry={entry} onDelete={onDelete(entry)} onUpdate={onUpdate(entry)} showUserInfo={showUserInfo} />
                   )
                 }
               </Stack>

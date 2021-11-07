@@ -4,7 +4,7 @@ import { applyMiddleware, createStore, Store } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer from './reducers'
 
-export const configureStore = (preloadedState?: object): Store => {
+export const configureStore = (preloadedState?: any): Store => {
   const middlewares = [thunkMiddleware]
   const middlewareEnhancer = applyMiddleware(...middlewares)
 
@@ -19,5 +19,6 @@ export const configureStore = (preloadedState?: object): Store => {
 export interface RootState {
   entries: any,
   user: any,
-  meta: any
+  meta: any,
+  admin: any
 }

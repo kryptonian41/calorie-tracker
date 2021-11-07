@@ -1,13 +1,9 @@
-import { Container } from '@chakra-ui/layout'
-import React from 'react'
-import AdminAppRouter from '../../router/admin'
-import { AdminHeader } from '../Header'
+import { Container } from '@chakra-ui/react';
+import React from 'react';
+import AdminAppRouter from '../../router/admin';
+import { AdminHeader } from '../Header';
 
-interface Props {
-
-}
-
-const AdminLayout = (props: Props) => {
+const AdminLayout = () => {
   return (
     <Container maxW="container.xl">
       <AdminHeader />

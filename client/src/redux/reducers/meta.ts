@@ -13,6 +13,9 @@ export default function metaReducer(state = defaultState, action) {
     case MetaAction.SET_LOADING_USER_INFO: {
       return { ...state, loadingUserInfo: action.payload }
     }
+    case MetaAction.SET_LOADING_USERS_LIST: {
+      return { ...state, loadingUsersList: action.payload }
+    }
     default: {
       return state
     }

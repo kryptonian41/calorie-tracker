@@ -11,6 +11,7 @@ const defaultDateRange = {
 export const getAdminBootstrapData = (dateRange = defaultDateRange) => async dispatch => {
   dispatch(getAdminEntries(dateRange))
   dispatch(getAdminReports(dateRange))
+  dispatch(getUsersList())
 }
 
 export const getAdminEntries = (dateRange = defaultDateRange, onDone = () => { }) => async dispatch => {
@@ -22,9 +23,18 @@ export const getAdminEntries = (dateRange = defaultDateRange, onDone = () => { }
   onDone && onDone()
 }
 
+export const getUsersList = () => async dispatch => {
+  dispatch({ type: MetaAction.SET_LOADING_USERS_LIST, payload: true })
+  const { data: report } = await axios.get('/admin/get-user-list')
+  dispatch({ type: AdminAction.SET_USERS_LIST, payload: report })
+  dispatch({ type: MetaAction.SET_LOADING_USERS_LIST, payload: false })
+}
+
 export const getAdminReports = (dateRange = defaultDateRange) => async dispatch => {
-  const { data: report } = await axios.post('/admin/get-report', dateRange)
+  dispatch({ type: MetaAction.SET_LOADING_REPORT_DATA, payload: true })
+  const { data: report } = await axios.get('/admin/get-report')
   dispatch({ type: AdminAction.SET_REPORT_INFO, payload: report })
+  dispatch({ type: MetaAction.SET_LOADING_REPORT_DATA, payload: false })
 }
 
 export const addEntryByAdmin = (entry, onDone) => async dispatch => {
