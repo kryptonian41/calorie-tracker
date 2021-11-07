@@ -33,6 +33,7 @@ export const getUsersList = () => async dispatch => {
 export const getAdminReports = (dateRange = defaultDateRange) => async dispatch => {
   dispatch({ type: MetaAction.SET_LOADING_REPORT_DATA, payload: true })
   const { data: report } = await axios.get('/admin/get-report')
+  await timePromise(2000)
   dispatch({ type: AdminAction.SET_REPORT_INFO, payload: report })
   dispatch({ type: MetaAction.SET_LOADING_REPORT_DATA, payload: false })
 }

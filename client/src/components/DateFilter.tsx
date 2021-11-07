@@ -1,9 +1,8 @@
 import { Button } from '@chakra-ui/button';
 import { InputGroup, InputLeftAddon } from '@chakra-ui/input';
 import { Box, Stack } from '@chakra-ui/layout';
-import { useBreakpointValue } from '@chakra-ui/media-query';
 import { addDays, subDays } from 'date-fns';
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import DatePicker from "react-datepicker";
 import { MdSearch } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
@@ -13,7 +12,6 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
   const [value, setValue] = useState(initialValues)
   const [isLoadingEntries, setIsLoadingEntries] = useState(false)
   const dispatch = useDispatch()
-  const buttonText = useBreakpointValue({ base: 'Search', md: '' })
 
   const refreshEntries = useCallback(async () => {
     setIsLoadingEntries(true)
@@ -45,8 +43,8 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
             maxDate={new Date()}
           />
         </InputGroup>
-        <Button disabled={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdSearch size="20px" />} iconSpacing={{ md: 0, base: 2 }} variant="outline" flexShrink={0}>
-          {buttonText}
+        <Button disabled={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdSearch size="20px" />} iconSpacing={2} variant="outline" flexShrink={0}>
+          Search
         </Button>
       </Stack>
     </Box>

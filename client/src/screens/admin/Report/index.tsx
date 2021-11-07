@@ -1,10 +1,20 @@
-import { Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Text, Stack, Avatar, Grid } from '@chakra-ui/react'
+import { Stat, StatArrow, StatGroup, StatHelpText, StatLabel, StatNumber, Text, Stack, Avatar, Grid, Box, Button } from '@chakra-ui/react'
 import { format, subDays } from 'date-fns'
-import React, { useMemo } from 'react'
-import { useSelector } from 'react-redux'
+import React, { useCallback, useMemo } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { MdRefresh } from 'react-icons/md';
+import { getAdminReports } from '../../../redux/actions';
+import { LoadingStack } from '../../../components/EntryList';
 
 const Report = () => {
   const report = useSelector((state: any) => state.admin.report)
+  const isloadingReportData = useSelector((state: any) => state.meta.loadingReportData)
+  const dispatch = useDispatch()
+
+  const refreshReports = useCallback(() => {
+    dispatch(getAdminReports())
+  }, [dispatch])
+
   const { entryAddedMetrics: { firstWeek, secondWeek }, calorieAmountReport, avgCalAddedPerUser } = report
 
   const increasePercentage = useMemo(() => {
@@ -25,39 +35,49 @@ const Report = () => {
 
   return (
     <div>
-      <StatGroup direction="row" border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
-        <Stat>
-          <StatLabel>Entries added in the last 7 days</StatLabel>
-          <StatNumber>{firstWeek.count}</StatNumber>
-          <StatHelpText>{dateRangeText.firstWeek}</StatHelpText>
-          <StatArrow type="increase" />
-          {increasePercentage}%
-        </Stat>
-        <Stat>
-          <StatLabel>Entries added in the last 7-14 days</StatLabel>
-          <StatNumber>{secondWeek.count}</StatNumber>
-          <StatHelpText>{dateRangeText.secondWeek}</StatHelpText>
-        </Stat>
-        <Stat>
-          <StatLabel>Average Calories added by all users in last 7 days</StatLabel>
-          <StatNumber>{avgCalAddedPerUser} Calories</StatNumber>
-        </Stat>
-      </StatGroup>
+      <Box mb="8">
+        <Button disabled={isloadingReportData} onClick={refreshReports} colorScheme="teal" leftIcon={<MdRefresh size="20px" />} iconSpacing={2} variant="outline" flexShrink={0}>
+          Refresh
+        </Button></Box>
+      {
+        isloadingReportData ?
+          <LoadingStack />
+          : <>
+            <StatGroup direction="row" border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
+              <Stat>
+                <StatLabel>Entries added in the last 7 days</StatLabel>
+                <StatNumber>{firstWeek.count}</StatNumber>
+                <StatHelpText>{dateRangeText.firstWeek}</StatHelpText>
+                <StatArrow type="increase" />
+                {increasePercentage}%
+              </Stat>
+              <Stat>
+                <StatLabel>Entries added in the last 7-14 days</StatLabel>
+                <StatNumber>{secondWeek.count}</StatNumber>
+                <StatHelpText>{dateRangeText.secondWeek}</StatHelpText>
+              </Stat>
+              <Stat>
+                <StatLabel>Average Calories added by all users in last 7 days</StatLabel>
+                <StatNumber>{avgCalAddedPerUser} Calories</StatNumber>
+              </Stat>
+            </StatGroup>
 
-      <Stack mt="6" spacing="6">
-        <Text fontSize="xl" casing="uppercase"> Average calories added / USER in the last 7 days </Text>
-        <Grid gridTemplateColumns="1fr 1fr" gap="4">
-          {calorieAmountReport.map(item =>
-            <Stack direction="row" alignItems="center" border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
-              <Stack direction="row" alignItems="center" flex="1">
-                <Avatar name={item.userDetails.name} size="sm" bg="gray.600" color="white" />
-                <Text color="gray.400" fontSize="lg">{item.userDetails.email}</Text>
-              </Stack>
-              <Text fontWeight="bold" fontSize="xl">{item.avgCalories} Cals.</Text>
-            </Stack>)
-          }
-        </Grid>
-      </Stack>
+            <Stack mt="6" spacing="6">
+              <Text fontSize="xl" casing="uppercase"> Average calories added / USER in the last 7 days </Text>
+              <Grid gridTemplateColumns="1fr 1fr" gap="4">
+                {calorieAmountReport.map(item =>
+                  <Stack direction="row" alignItems="center" border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
+                    <Stack direction="row" alignItems="center" flex="1">
+                      <Avatar name={item.userDetails.name} size="sm" bg="gray.600" color="white" />
+                      <Text color="gray.400" fontSize="lg">{item.userDetails.email}</Text>
+                    </Stack>
+                    <Text fontWeight="bold" fontSize="xl">{item.avgCalories} Cals.</Text>
+                  </Stack>)
+                }
+              </Grid>
+            </Stack>
+          </>
+      }
     </div>
   )
 }

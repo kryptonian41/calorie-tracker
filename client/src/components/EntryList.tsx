@@ -14,7 +14,7 @@ interface Props {
   showUserInfo?: boolean
 }
 
-const LoadingStack = () => {
+export const LoadingStack = () => {
   return <Stack spacing="4">
     {(new Array(3).fill(0)).map((_, i) => (
       <Stack opacity={0.4 / i} border="1px" borderColor="gray.600" borderRadius="8" p="6" spacing="4">
@@ -25,7 +25,6 @@ const LoadingStack = () => {
     ))}
   </Stack>
 }
-
 
 const EntriesList = ({ deleteEntryAction, updateEntryAction, refreshAction, showUserInfo = false }: Props) => {
   const entries = useSelector<RootState, any[]>(state => state.entries)

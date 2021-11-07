@@ -10,6 +10,9 @@ export default function metaReducer(state = defaultState, action) {
     case MetaAction.SET_LOADING_ENTRIES: {
       return { ...state, loadingEntries: action.payload }
     }
+    case MetaAction.SET_LOADING_REPORT_DATA: {
+      return { ...state, loadingReportData: action.payload }
+    }
     case MetaAction.SET_LOADING_USER_INFO: {
       return { ...state, loadingUserInfo: action.payload }
     }
