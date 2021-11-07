@@ -1,11 +1,11 @@
-import { Box, Text, Stack, useDisclosure, CircularProgress, Skeleton, Fade } from '@chakra-ui/react'
+import { Box, Fade, Skeleton, Stack, Text, useDisclosure } from '@chakra-ui/react'
 import React, { useCallback, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import EntryListItem from './EntryListItem'
-import { DeleteEntryConfirmationModal } from "./DeleteEntryConfirmationModal"
-import UpdateEntry from './UpdateEntry'
 import { RootState } from '../redux'
 import DateFilter from './DateFilter'
+import { DeleteEntryConfirmationModal } from "./DeleteEntryConfirmationModal"
+import EntryListItem from './EntryListItem'
+import UpdateEntry from './UpdateEntry'
 
 interface Props {
   deleteEntryAction: any,

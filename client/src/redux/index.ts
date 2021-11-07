@@ -3,6 +3,7 @@ import thunkMiddleware from 'redux-thunk'
 import { applyMiddleware, createStore, Store } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 import rootReducer from './reducers'
+import { Entry, Report, User, UserList } from '../types'
 
 export const configureStore = (preloadedState?: any): Store => {
   const middlewares = [thunkMiddleware]
@@ -17,8 +18,11 @@ export const configureStore = (preloadedState?: any): Store => {
 
 
 export interface RootState {
-  entries: any,
-  user: any,
+  entries: Entry[],
+  user: User,
   meta: any,
-  admin: any
+  admin: {
+    users: UserList[],
+    report: Report
+  }
 }

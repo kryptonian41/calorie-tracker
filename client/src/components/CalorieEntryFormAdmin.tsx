@@ -7,6 +7,7 @@ import * as yup from 'yup';
 import { isBefore } from 'date-fns'
 import { useSelector } from "react-redux";
 import { RootState } from "../redux";
+import { UserList } from "../types";
 
 //@ts-ignore
 export const DateInput = forwardRef(({ value, onClick }, ref) => <Input value={value} isReadOnly onClick={onClick} ref={ref} />)
@@ -26,7 +27,7 @@ export const CalorieFormAdmin = ({
   buttonText = 'Add'
 }) => {
   const isLoadingUsersList = useSelector<RootState, boolean>(state => state.meta.loadingUsersList)
-  const userList = useSelector<RootState, any[]>(state => state.admin.users)
+  const userList = useSelector<RootState, UserList[]>(state => state.admin.users)
 
   return (
     <Formik

@@ -1,5 +1,5 @@
-import { Box, Center, Stack, Text } from '@chakra-ui/react';
 import { Progress } from '@chakra-ui/progress';
+import { Center, Stack, Text } from '@chakra-ui/react';
 import React, { Suspense, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from './redux';
@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     dispatch(getUserInfo())
-  }, [])
+  }, [dispatch])
 
   useEffect(() => {
     if (!user) return

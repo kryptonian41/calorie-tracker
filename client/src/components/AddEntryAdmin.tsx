@@ -1,6 +1,5 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from "react-redux";
-import { CalorieForm } from './CalorieEntryForm';
 import { CalorieFormAdmin } from './CalorieEntryFormAdmin';
 
 export const AddEntryAdmin: React.FC<any> = ({ onAdd }) => {
