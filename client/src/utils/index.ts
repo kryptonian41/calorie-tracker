@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 
-// resolve promise after a timeout
 export const timePromise = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 export const useSessionStorage = (key, initialValue) => {

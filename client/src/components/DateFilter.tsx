@@ -5,7 +5,7 @@ import { useBreakpointValue } from '@chakra-ui/media-query';
 import { addDays, subDays } from 'date-fns';
 import React, { useCallback, useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
-import { MdRefresh } from 'react-icons/md';
+import { MdSearch } from 'react-icons/md';
 import { useDispatch } from 'react-redux';
 import { DateInput } from './CalorieEntryForm';
 
@@ -13,17 +13,13 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
   const [value, setValue] = useState(initialValues)
   const [isLoadingEntries, setIsLoadingEntries] = useState(false)
   const dispatch = useDispatch()
-  const buttonText = useBreakpointValue({ base: 'Refresh', md: null })
+  const buttonText = useBreakpointValue({ base: 'Search', md: '' })
 
   const refreshEntries = useCallback(async () => {
     setIsLoadingEntries(true)
     await dispatch(refreshAction({ minDate: value.from, maxDate: value.to }))
     setIsLoadingEntries(false)
   }, [dispatch, value, refreshAction])
-
-  useEffect(() => {
-    refreshEntries()
-  }, [value, refreshEntries])
 
   return (
     <Box my="4">
@@ -49,7 +45,7 @@ export const DateFilter = ({ initialValues = { to: new Date(), from: subDays(new
             maxDate={new Date()}
           />
         </InputGroup>
-        <Button disabled={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdRefresh size="20px" />} iconSpacing={{ md: 0, base: 2 }} variant="outline" flexShrink={0}>
+        <Button disabled={isLoadingEntries} onClick={refreshEntries} colorScheme="teal" leftIcon={<MdSearch size="20px" />} iconSpacing={{ md: 0, base: 2 }} variant="outline" flexShrink={0}>
           {buttonText}
         </Button>
       </Stack>

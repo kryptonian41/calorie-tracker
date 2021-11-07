@@ -15,21 +15,25 @@ const UserLayout = () => {
       <UserHeader />
       <Flex direction={{ base: "column", md: "row" }}>
         <Box w={{ base: "100%", md: "25%" }}>
-          <Text mb="3" fontSize="xl" casing="uppercase"> Add an Entry </Text>
-          <AddEntry onAdd={addEntry} />
-          <WarningNotification />
-          <AddFriendForm onSubmit={async (values, { setSubmitting, resetForm }) => {
-            const { email, password } = await inviteUser(values.name, values.email)
-            setSubmitting(false);
-            resetForm()
-            toast({
-              title: "Account created.",
-              description: `We've created an account for ${email}\n Password: ${password}`,
-              status: "success",
-              duration: 9000,
-              isClosable: true,
-            })
-          }} />
+          <Box position="sticky" top="20px">
+            <WarningNotification />
+            <Text mb="3" fontSize="xl" casing="uppercase"> Add an Entry </Text>
+            <Box mb="8">
+              <AddEntry onAdd={addEntry} />
+            </Box>
+            <AddFriendForm onSubmit={async (values, { setSubmitting, resetForm }) => {
+              const { email, password } = await inviteUser(values.name, values.email)
+              setSubmitting(false);
+              resetForm()
+              toast({
+                title: "Account created.",
+                description: `We've created an account for ${email}\n Password: ${password}`,
+                status: "success",
+                duration: 9000,
+                isClosable: true,
+              })
+            }} />
+          </Box>
         </Box>
         <Box flex="1" pl={{ base: 0, md: 8 }} pt={{ base: 8, md: 0 }} pb="8">
           <UserAppRouter />
