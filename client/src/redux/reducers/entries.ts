@@ -1,5 +1,6 @@
 import { EntriesAction } from '../actions/types'
 import { produce } from 'immer'
+import { sortByDate } from '../../utils'
 
 export default function entriesReducer(state: any[] = [], action) {
   switch (action.type) {
@@ -7,7 +8,7 @@ export default function entriesReducer(state: any[] = [], action) {
       return action.payload
     }
     case EntriesAction.ADD_ENTRY: {
-      return [...state, action.payload]
+      return [...state, action.payload].sort(sortByDate)
     }
     case EntriesAction.UPDATE_ENTRY: {
       return produce(state, dstate => {

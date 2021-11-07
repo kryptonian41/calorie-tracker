@@ -5,24 +5,9 @@ import CalorieLimitMap from '../config/calorie-limit-map.json'
 import { Box, Stack, Text } from '@chakra-ui/layout'
 import { MdWarningAmber } from 'react-icons/md'
 import { Button } from '@chakra-ui/button'
-import { useSessionStorage } from '../utils'
+import { filterByDataRange, sumOfArrayItems, useSessionStorage } from '../utils'
 
-const sortByDate = (a: any, b: any) => {
-  return new Date(b.date).getTime() - new Date(a.date).getTime()
-}
 
-const filterByDataRange = (data: any, startDate: Date, endDate: Date) => {
-  return data.filter((item: any) => {
-    const date = new Date(item.timestamp)
-    return date >= startDate && date <= endDate
-  })
-}
-
-const sumOfArrayItems = (array: any, key) => {
-  return array.reduce((acc: any, item: any) => {
-    return acc + item[key]
-  }, 0)
-}
 
 const WarningNotification = () => {
   const entries = useSelector<RootState, any[]>(store => store.entries)

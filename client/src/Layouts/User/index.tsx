@@ -15,7 +15,7 @@ const UserLayout = () => {
           <AddEntry onAdd={addEntry} />
           <WarningNotification />
         </Box>
-        <Box flex="1" pl={{ base: 0, md: 8 }} py={{ base: 8, md: 0 }}>
+        <Box flex="1" pl={{ base: 0, md: 8 }} pt={{ base: 8, md: 0 }} pb="8">
           <UserAppRouter />
         </Box>
       </Flex>

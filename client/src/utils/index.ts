@@ -7,7 +7,6 @@ export const useSessionStorage = (key, initialValue) => {
   const [state, setstate] = useState(() => {
     try {
       const value = sessionStorage.getItem(key);
-      console.log("🚀 ~ file: index.ts ~ line 10 ~ const[state,setstate]=useState ~ value", value)
       return value ? JSON.parse(value) : initialValue;
     } catch (e) {
       return null;
@@ -34,4 +33,22 @@ export const useSessionStorage = (key, initialValue) => {
   }, [key, state])
 
   return [state, setstate, deleteKey]
+}
+
+
+export const sortByDate = (a: any, b: any) => {
+  return new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+}
+
+export const filterByDataRange = (data: any, startDate: Date, endDate: Date) => {
+  return data.filter((item: any) => {
+    const date = new Date(item.timestamp)
+    return date >= startDate && date <= endDate
+  })
+}
+
+export const sumOfArrayItems = (array: any, key) => {
+  return array.reduce((acc: any, item: any) => {
+    return acc + item[key]
+  }, 0)
 }

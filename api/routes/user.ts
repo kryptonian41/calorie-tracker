@@ -9,7 +9,7 @@ router.use(verifyToken)
 router.post('/get-entries', async (req, res) => {
   const { minDate, maxDate } = req.body
   const entries = await CalorieEntry.find()
-    .sort({ timestamp: 1 })
+    .sort({ timestamp: -1 })
     .ByUserAndDate({ userId: req.user.id, dateRange: { min: minDate, max: maxDate } }).exec()
   res.json(entries)
 })

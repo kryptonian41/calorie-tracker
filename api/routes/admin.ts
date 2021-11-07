@@ -14,7 +14,7 @@ router.get('/get-report', async (req, res) => {
 router.post('/get-entries', async (req, res) => {
   const { minDate, maxDate } = req.body
   const entries = await CalorieEntry.find()
-    .sort({ timestamp: 1 })
+    .sort({ timestamp: -1 })
     .ByDate({ dateRange: { min: minDate, max: maxDate } })
     .populate({ path: 'userId', select: 'name email' })
     .transform(res => res.map(res => {
