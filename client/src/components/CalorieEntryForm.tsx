@@ -47,6 +47,7 @@ export const CalorieForm = ({
               onChange={(date) => setFieldValue('timestamp', date)}
               customInput={<DateInput />}
               dateFormat="do MMM y"
+              maxDate={new Date()}
             />
             <ErrorMessage name="timestamp" component="div" />
             <Button colorScheme="teal" disabled={isSubmitting} type="submit">{buttonText}</Button>

@@ -59,6 +59,7 @@ export const CalorieFormAdmin = ({
               onChange={(date) => setFieldValue('timestamp', date)}
               customInput={<DateInput />}
               dateFormat="do MMM y"
+              maxDate={new Date()}
             />
             <ErrorMessage name="timestamp" component="div" />
             <Button disabled={isLoadingUsersList || isSubmitting} colorScheme="teal" type="submit">{buttonText}</Button>
