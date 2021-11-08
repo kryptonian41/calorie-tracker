@@ -2,6 +2,8 @@
 
 Note: Make sure the required parameters are present in the respective environment files of both the projects for proper functioning. Example env files have been added for convinience. After proper values are present rename the example files to .env.
 
+A video (DEMO.mp4) has been for introduction on how to use the application
+
 ## Build and run the client application for development with hot-reload
 1. `cd ./client`
 2. `npm install`
