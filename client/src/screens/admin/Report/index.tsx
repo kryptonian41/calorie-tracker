@@ -51,7 +51,7 @@ const ReportScreen = () => {
         isloadingReportData ?
           <LoadingStack />
           : <>
-            <StatGroup direction="row" border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
+            <StatGroup flexDirection={{ base: 'column', md: "row" }} border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
               <Stat>
                 <StatLabel>Entries added in the last 7 days</StatLabel>
                 <StatNumber>{entryAddedMetrics.firstWeek.count}</StatNumber>
@@ -59,20 +59,20 @@ const ReportScreen = () => {
                 <StatArrow type="increase" />
                 {increasePercentage}%
               </Stat>
-              <Stat>
+              <Stat mt={{ base: 6, md: 0 }}>
                 <StatLabel>Entries added in the last 7-14 days</StatLabel>
                 <StatNumber>{entryAddedMetrics.secondWeek.count}</StatNumber>
                 <StatHelpText>{dateRangeText.secondWeek}</StatHelpText>
               </Stat>
-              <Stat>
+              <Stat mt={{ base: 6, md: 0 }}>
                 <StatLabel>Average Calories added by all users in last 7 days</StatLabel>
                 <StatNumber>{avgCalAddedPerUser.toFixed(2)} Calories</StatNumber>
               </Stat>
             </StatGroup>
 
             <Stack mt="6" spacing="6">
-              <Text fontSize="xl" casing="uppercase"> Average calories added / USER in the last 7 days </Text>
-              <Grid gridTemplateColumns="1fr 1fr" gap="4">
+              <Text fontSize={{ base: 'lg', md: "xl" }} casing="uppercase"> Average calories added / USER in the last 7 days </Text>
+              <Grid gridTemplateColumns={{ base: 'ifr', md: "1fr 1fr" }} gap="4">
                 {calorieAmountReport.map(item =>
                   <Stack direction="row" alignItems="center" border="1px" borderColor="gray.600" p="6" borderRadius="8" boxShadow="lg">
                     <Stack direction="row" alignItems="center" flex="1">
