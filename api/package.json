@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc -p .",
     "watch": "tsc -w",
-    "server:dev": "nodemon ./dist/index.js",
+    "serve:dev": "nodemon ./dist/index.js",
     "serve": "node ./dist/index.js",
     "dev": "run-p -l watch server:dev"
   },
