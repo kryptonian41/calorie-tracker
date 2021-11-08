@@ -19,7 +19,7 @@ function Heading() {
 
 export const UserHeader = () => {
   return <>
-    <Heading />
+    <Box pt="3"><Heading /></Box>
     <LineStack />
   </>
 }
